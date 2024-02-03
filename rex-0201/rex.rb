@@ -192,10 +192,43 @@ String#splitは、引数の正規表現にマッチしたもので文字列を�
 
 # No15
 
-p "Hello" * 5 # 実行結果 "HelloHelloHelloHelloHello"
+# p "Hello" * 5 # 実行結果 "HelloHelloHelloHelloHello"
 
 =begin
 String#*はselfを引数の回数分、繰り返した文字列を新しく作成し返します。
 =end
 
 # No16
+
+# File.open('testfile.txt',) do |f|
+#   f.write("recode 1\n")
+#   f.write("recode 2\n")
+# end
+
+=begin
+保留
+=end
+
+# No17
+
+# each_sliceの例
+
+# arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+# arr.each_slice(3) do |i|
+#   p i
+# end # 実行結果 [1, 2, 3] [4, 5, 6] [7, 8, 9] [10]
+
+# arr = (1..30).to_a
+# container = []
+
+# arr.each_slice(7) do |i|
+#   container << i # 配列に格納？
+# end
+
+# p container.length
+
+=begin
+Array#each_slice(n)は、selfからn個で配列を区切りブロックに渡します。
+=end
+
+# No18
