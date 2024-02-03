@@ -181,8 +181,21 @@ end
 
 # No14
 
-p "Apple-Banana-Lemon".split/(-)/
+# p "Apple-Banana-Lemon".split /(-)/ # 実行結果　["Apple", "-", "Banana", "-", "Lemon"]
+# p "Spring,Summer,Autumn,Winter".split(/,/) # 実行結果 ["Spring", "Summer", "Autumn", "Winter"]
+# p "Spring,Summer,Autumn,Winter".split(/(,)/) # 実行結果 ["Spring", ",", "Summer", ",", "Autumn", ",", "Winter"]
 
 =begin
 String#splitは、引数の正規表現にマッチしたもので文字列を分解します。
+例えば、カンマを使って"Spring,Summer,Autumn,Winter"を分解してみます。
 =end
+
+# No15
+
+p "Hello" * 5 # 実行結果 "HelloHelloHelloHelloHello"
+
+=begin
+String#*はselfを引数の回数分、繰り返した文字列を新しく作成し返します。
+=end
+
+# No16
