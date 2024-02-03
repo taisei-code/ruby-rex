@@ -232,3 +232,250 @@ Array#each_slice(n)は、selfからn個で配列を区切りブロックに渡�
 =end
 
 # No18
+
+# def bar(n)
+#   puts n
+# end
+# bar 5 ○
+
+# def bar(n)
+#   puts n
+# end
+# bar (10) ○
+
+# def bar(*n1, n2)
+#   puts n1
+#   puts n2
+# end
+# bar 5, 6, 7, 8 ○
+
+# def bar(*n1, n2, *n3)
+#   puts n1
+#   puts n2
+# end
+# bar 5, 6, 7, 8 ×
+
+=begin
+可変長引数を2つ定義することはできません。
+可変長引数の実行結果は次の通りになります。
+=end
+
+# No19
+
+# a = [1,2,3,4]
+# p a.slice(2,1)
+
+=begin
+Rubyの配列は0番からスタートします。よって、3番目から1文字の[3]が出力されます。
+=end
+
+# No20
+
+# arr = Array(3){"a"}
+# # arr.first.upcase
+# p arr
+
+# arr = Array(3){"a"}
+# arr.first.upcase!
+# p arr
+
+# arr = Array.new(3){"a"}
+# arr.first.upcase
+# p arr
+# 実行結果 ["a", "a", "a"]
+
+# arr = Array.new(3){"a"}
+# arr.first.upcase!
+# p arr 
+# 実行結果 ["A", "a", "a"]
+
+=begin
+Array(3)はArray([3])と宣言したことと同じ意味
+Array#firstは配列の先頭要素を取得します。
+Array.new(3){"a"}は要素数3の配列を作成し、ブロックの値でそれぞれ初期化します。
+
+String#upcaseは非破壊メソッドなので、selfの内容は変わりません。
+String#upcase!は破壊メソッドなので、selfの内容が変わります
+=end
+
+# No21
+
+=begin
+Enumerable#collect	各要素に対してブロックの結果をまとめた配列を返します。
+Enumerable#map	Enumerable#collectの別名です。
+Enumerable#select	selfからブロックの条件に該当する要素を集めて返します。
+Enumerable#find	selfからブロックの条件に該当する最初の要素を返します。
+Array#delete	selfから引数の要素を削除します。削除した要素を返します。破壊的メソッドです。
+=end
+
+# No22
+
+# class Foo
+#   attr_accessor :foo
+
+#   def initialize
+#     @foo = 0
+#   end
+# end
+
+# foo1 = Foo.new
+# foo1.foo += 1
+# foo2 = Foo.new
+# foo2.foo += 2
+
+# puts "#{foo1.foo}/#{foo2.foo}"
+
+=begin
+先頭に@が付く変数はインスタンス変数です。インスタンス変数は、そのインスタンス変数が定義されているクラスのインスタンスごとにインスタンス内で共有されます。
+問題ではinitializeメソッドでインスタンス変数@fooが初期化され、attr_accessorで読み取りと書き込みを可能にしています。
+
+Fooクラスのインスタンスであるfoo1, foo2は、それぞれ別のインスタンスなのでインスタンス変数@fooもそれぞれで独立します。
+=end
+
+# No23
+
+# class Foo
+#   attr_reader :a
+
+#   def initialize
+#     @a = "REx"
+#   end
+# end
+
+# foo = Foo.new
+# puts foo.a
+
+=begin
+attr_readerメソッドは引数に指定した名前のインスタンス変数に対して読み取り用メソッド(getterメソッド)を定義します。
+
+引数にはStringクラスかSymbolクラスのリテラルを指定します。複数指定することも可能です。
+
+クラス内で例1のようにattr_reader :aと記述すると例2のようにインスタンス変数@aに対して読み取り用のメソッドを定義したことになります。
+例1と例2のFooクラスはそれぞれインスタンス変数@aに対しての読み取りメソッドを持ちます。
+=end
+
+# No24
+
+# p "Hello" % 5
+# p "Hello%d" % 5
+
+=begin
+String#%はフォーマットされた文字列を返します。
+フォーマットには、"%d"や%sなどの指示子を用います。
+String#%を用いると、指示子が引数の値で置換されます。
+
+指示子の詳しい説明はRubyリファレンスを参照してください。
+
+今回の問題では文字列"Hello"にフォーマットに必要な指示子が無いためそのまま出力されます。
+
+指示子を付与すれば次のように表示されます。
+=end
+
+# No25
+
+# chars = "I love apple, banana and grape"
+
+# 6.times do
+#   chars = chars.sub("a", "@")
+# end
+# p chars
+
+=begin
+subは第一引数の検索対象のパターンと、第二引数の置換後の文字列を使って１回だけレシーバーの文字列を置換します。
+=end
+
+# No26
+
+
+# No27
+
+
+# No28
+
+# class Foo
+#   @@var = 0
+
+#   def var
+#     @@var
+#   end
+
+#   def var=(value)
+#     @@var = value
+#   end
+
+# end
+
+# class Bar < Foo
+# end
+
+# foo = Foo.new
+# foo.var += 1
+# bar = Bar.new
+# bar.var += 2
+
+# puts "#{foo.var}/#{bar.var}"
+
+=begin
+問題ではFooクラスにクラス変数@@varが定義されています。
+クラス変数は継承されたクラスにも反映されるので、そのクラス変数が定義されているクラスとそのサブクラスの全インスタンスで共有されます。
+FooクラスのインスタンスfooとFooクラスを継承しているBarクラスのインスタンスbarで@@varの値を参照・更新しています。
+foo, barではFooクラスの@@varは共有され実行結果は3/3となります。
+=end
+
+# No29
+
+# h = {a: 100}
+# h.each {|p|
+#   p p.class
+# }
+
+=begin
+Hash#eachのブロックパラメータはArrayで渡されます。
+=end
+
+# No30
+
+# hoge = "a".to_a
+# puts hoge.class
+
+=begin
+Stringにto_aメソッドはありません。
+=end
+
+# No31
+
+# h = {a: 200, b: 200}
+# puts h.invert
+
+=begin
+Hash#invertはキーと値を入れ替えます。
+入れ替えの結果キーが重複した場合は、後に定義された方が優先されます。
+=end
+
+# No32
+
+h = {a: 100, b: 200}
+h.delete(:a)
+puts h
+
+=begin
+Hash#delete(:key)はレシーバーからkeyの項目を削除します。
+このメソッドは破壊的メソッドです。
+=end
+
+# No33
+
+
+# No34
+
+# str = "Liberty Fish   \r\n"
+# str.strip
+# p str
+
+=begin
+String#stripは文字列の先頭と末尾の空白文字(\t\r\n\f\v)を取り除きます。String#stripは破壊的メソッドではないので、内容は変更されません。
+=end
+
+# No35
+
+
