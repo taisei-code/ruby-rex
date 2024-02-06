@@ -1,6 +1,6 @@
 # No1
 
-# arr = ["apple", "banana", "orange"].flatten
+# arr = [["apple", "banana", "orange"]].flatten
 # arr.each do |i|
 #   puts i
 # end
@@ -19,9 +19,9 @@ Array#flattenはselfを再帰的に平坦化します(3次元配列を1次元配
 
 # No3
 
-# str = "Liberty Fish   \r\n"
-# str.chop
-# p str
+str = "Liberty Fish   \r\n"
+str.chop
+p str
 
 =begin
 str.chopは末尾の文字を取り除きます。ただし、文字列の末尾が"\r\n"であれば、2文字とも取り除きます。
