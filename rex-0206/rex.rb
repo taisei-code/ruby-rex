@@ -1,62 +1,45 @@
 # No1
 
-# # class Foo
-# #   attr_writer :a
-# # end
+# arr = ["apple", "banana", "orange"].flatten
+# arr.each do |i|
+#   puts i
+# end
 
-# # foo = Foo.new
-# # foo.a = "REx" # => オブジェクトfooが保持するインスタンス変数@aに文字列"value"が代入される
-# # puts foo.a    # => インスタンス変数@aに対して読み取り用のメソッドが定義されていないためNoMethodErrorが発生
-
+=begin
+Array#flattenはselfを再帰的に平坦化します(3次元配列を1次元配列の配列を返す)。
+=end
 
 # No2
 
-# str = "abcdefghijk"
-# p str[2,4] 
+#保留
 
 =begin
-# Rubyの配列は0番からスタートします。よって、3番目から4文字のcdefが出力されます。
+
 =end
 
 # No3
 
-# def hoge(n)
-#   if n % 3 == 0
-#     "hello"
-#   elsif n % 5 == 0
-#     "world"
-#   end
-# end
-
-# str = 'a'
-# str.concat hoge(2)
-# str.concat hoge(5)
-# puts str
+# str = "Liberty Fish   \r\n"
+# str.chop
+# p str
 
 =begin
-String#concatはselfへ引数の値を結合します。selfの内容を変更します。
+str.chopは末尾の文字を取り除きます。ただし、文字列の末尾が"\r\n"であれば、2文字とも取り除きます。
+破壊的メソッドではないので、selfは影響を受けません。
+
+理解できない
 =end
 
 # No4
 
-# def hoge(step = 1)
-#   current = 0
-#   Proc.new {
-#     current += step
-#   }
-# end
-
-# p1 = hoge
-# p2 = hoge(2)
-
-# p2.call 
-# p2.call 
-
-# p p2.call
+# h = {a: 100, b: 100}
+# puts h.invert
 
 =begin
-p1とp2は別のProcオブジェクトのため、hogeメソッド内のcurrent変数は共有されません。
-よって、p2の結果は6になります。
+実行結果：{100=>:b}
+
+Hash#invertはキーと値を入れ替えます。
+入れ替えの結果キーが重複した場合は、後に定義された方が優先されます。
 =end
 
 # No5
@@ -66,40 +49,24 @@ p1とp2は別のProcオブジェクトのため、hogeメソッド内のcurrent�
 # p arr
 
 =begin
-Arrayクラスのsortメソッドの問題です。
+実行結果：ArgumentError
 
-sortメソッドは配列の要素を並び替えたい時に使用します。
-
-要素の並び替えは<=>演算子によって行われます。
-
-(要素1 <=> 要素2)の結果が-1なら要素1が順番として先に並び、0ならそのまま、1なら要素2が先に並びます。
-
-また<=>演算子で比較できない要素があると例外ArgumentErrorが発生します。
-
-<=>では文字列と数値は比較できません。
-
-問題のプログラムは文字列と数値を比較しています。
-
-よって答えは「ArgumentErrorになる」です。
+sortメソッドは配列の要素を並び替えたい時
+要素の並び替えは <=>演算子で行われる
+<=>では文字列と数値は比較できない
 =end
 
 # No6
 
-
+#保留
 
 # No7
 
-# X = 10
-# Y = X < 10 ? "C" : "D"
-# puts Y 
+d = Date.new(2015, 1, 5)
+p d.strftime("%x")
 
 =begin
-大文字アルファベットから始まる識別子は定数です。
-Rubyの定数は警告が表示された上で、上書きが可能です。
 
-問題のコードでは、変数X、Y共に最初の代入のため警告は発生しません。
-
-以下のコードは条件演算子といいます。条件が真の場合に、式1が返されます。条件が偽の場合に、式2が返されます。
 =end
 
 # No8
