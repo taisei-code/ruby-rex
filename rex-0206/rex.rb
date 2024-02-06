@@ -62,8 +62,8 @@ sortメソッドは配列の要素を並び替えたい時
 
 # No7
 
-d = Date.new(2015, 1, 5)
-p d.strftime("%x")
+# d = Date.new(2015, 1, 5)
+# p d.strftime("%x")
 
 =begin
 
@@ -71,98 +71,88 @@ p d.strftime("%x")
 
 # No8
 
-# puts "0x90".hex #144
-# puts '90' #90
-# puts 0b2 # 2進数ではない 0b10が正しい
-# puts '100'.oct #8進数ではない "100"が正しい
+# # a1 = "abc"
+# # a2 = 'abc'
+
+# print a1.eql? a2
+# print a1 == a2
 
 =begin
-0xは16進数を表すプレフィックスです。
-String#hexは文字列を16進数で解釈して、整数で返します。16進数で解釈できない場合は0を返します。
-
-0bは2進数を表すプレフィックスです。
-今回の選択肢0b2は2進数ではありません。0b10が正しい定義です。
-
-String#octは文字列を8進数で解釈して、整数で返します。8進数で解釈できない場合は0を返します。
-今回の選択肢”80”は8進数ではありません。"100"が正しい定義です。
+String#==(other)はotherが文字列の場合は、String#eql?と同じ結果を返します。
+String#eql?は同一文字列の場合にtrueを返します。
 =end
 
 # No9
-# str = "1;2;3;4"
-# p str.split(";")
 
-=begin
-String#splitはselfの文字列を分割するメソッドです。
-問題のコードでは";"で文字列を分割します。
-=end
-
-# No10
-# arr = [1,2].product([3,4])
-# p arr
-# arr = [1,2].product([3,4]).transpose
-# p arr
-
-=begin
-productはレシーバーの配列と引数の配列からそれぞれ1つ要素を取り出し新しい配列を作成し、全ての配列を要素とする配列を返します。
-transposeはレシーバーの配列から行と列を入れ替えた配列を作成し返します。
-=end
-
-# No11
-# p "Hello%d" % 5
-
-=begin
-String#%はフォーマットされた文字列を返します。
-フォーマットには、"%d"や%sなどの指示子を用います。
-String#%を用いると、指示子が引数の値で置換されます。
-
-指示子の詳しい説明はRubyリファレンスを参照してください。
-
-今回の問題では、"%d"が10進数表現で数値を出力します。
-=end
-
-# No12
 # Date.today.strftime("%F")
 
 =begin
 Date#strftimeは引数のフォーマット文字列で日付を文字列で返します。
+=end
 
-次の表が選択肢で使用されているフォーマット文字列の意味になります。
-%F	日付(%Y-%m-%d)
-%Y	西暦4桁
-%y	西暦の下2桁(00-99)
-%m	月を表す数字(01-12)
-%d	日(01-31)
+# No10
+
+# s = ["one", "two", "three"]
+# s.shift
+# s.shift
+# s.unshift 
+# s.push "four" 
+# p s
+
+=begin
+Array#shift | selfの先頭より1要素を破壊的に取り出します(FIFO)。 |
+Array#unshift | selfの先頭へ引数の値を破壊的に追加します(FIFO)。引数が指定されていない場合は何もしません。|
+Array#push | selfの末尾に引数の値を破壊的に追加します(LIFO)。 |
+=end
+
+# No11
+
+# a = [1, 2, 3, 5, 8]
+# b = [1, 3, 6, 7, 8]
+# c = false || true ? true && false ? a | b : a & b : b ;
+# p c
+
+=begin
+三項演算子と&, &&, |, ||演算子の問題です。
+=end
+
+# No12
+
+
+=begin
 
 =end
 
 # No13
 
+# a1 = [1, 2, 3]
+# a2 = [4, 2, 3]
+# p a1 - a2
+
 =begin
-Rubyでクラスを定義するにはclassキーワードを使います。
-クラスは次のように書くと定義することが出来ます。
+Array#-はselfから引数に含まれる要素を取り除きます。
+引数にselfに含まれない要素がある場合は、無視されます。
 
-class クラス名
-end
-
+問題では、a2にa1と同じ[2, 3]が含まれるので、[2, 3]を除く[1]が表示されます。
 =end
 
 # No14
 
-# p "Apple-Banana-Lemon".split /(-)/ # 実行結果　["Apple", "-", "Banana", "-", "Lemon"]
-# p "Spring,Summer,Autumn,Winter".split(/,/) # 実行結果 ["Spring", "Summer", "Autumn", "Winter"]
-# p "Spring,Summer,Autumn,Winter".split(/(,)/) # 実行結果 ["Spring", ",", "Summer", ",", "Autumn", ",", "Winter"]
+# arr = [1,2].product([3,4]).transpose
+# p arr
 
 =begin
-String#splitは、引数の正規表現にマッチしたもので文字列を分解します。
-例えば、カンマを使って"Spring,Summer,Autumn,Winter"を分解してみます。
+実行結果：[[1, 1, 2, 2], [3, 4, 3, 4]]
+
+productはレシーバーの配列と引数の配列からそれぞれ1つ要素を取り出し新しい配列を作成し、全ての配列を要素とする配列を返します。
 =end
 
 # No15
 
-# p "Hello" * 5 # 実行結果 "HelloHelloHelloHelloHello"
+# 保留
 
 =begin
-String#*はselfを引数の回数分、繰り返した文字列を新しく作成し返します。
+
 =end
 
 # No16
