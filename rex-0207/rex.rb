@@ -85,5 +85,95 @@ String#splitはselfの文字列を分割するメソッドです。
 *"a"はArrayクラスのオブジェクトを返します。
 =end
 
+# No7
 
+# str = "1;2;3;4"
+# p str.split(";")
 
+=begin
+String#splitはselfの文字列を分割するメソッドです。
+問題のコードでは";"で文字列を分割します。
+=end
+
+# No8
+
+# def foo
+#   var = "REx"
+# end
+
+# puts foo
+
+# CONST = "REx"
+
+# def foo
+#   CONST
+# end
+
+# puts foo
+
+# def foo
+#   CONST = "REx"
+# end
+
+# puts foo
+
+# var = "REx"
+
+# def foo
+#   var
+# end
+
+# puts foo
+
+=begin
+変数や定数は参照や更新ができる範囲(スコープ)を持っています。その変数や定数の種類によってスコープが決められています。
+外部で定義されたローカル変数はメソッド内部から呼び出すことはできません。
+外部で定義された定数はメソッド内部で呼び出し可能ですが、メソッド内部で定数を定義することはできません。
+=end
+
+# No9
+
+# $val = 0
+
+# class Count
+#   def self.up
+#     $val = $val + 1
+#     $val == 3 ? true : false
+#   end
+# end
+
+# [*1..10].any? do
+#   Count.up
+# end
+
+# p $val
+
+=begin
+Enumerable#any?はブロックの戻り値がtrueになると繰り返しをその時点で止めます。
+繰り返しが止まるのは3回目の繰り返し、つまり$valが3になった時点です。
+=end
+
+# No11
+
+=begin
+Fileクラスのクラスメソッドではないもの
+
+File.closeメソッド
+File.homeメソッド
+File.pwdメソッド
+=end
+
+# No12
+
+# class Foo
+#   attr_accessor :a
+# end
+
+# foo = Foo.new
+# foo.a = "REx"
+# puts foo.a
+
+=begin
+attr_accessorメソッド・・・引数に指定した名前のインスタンス変数に対して読み取り用のメソッド(getterメソッド)と書き込み用メソッド(setterメソッド)を定義
+引数にはStringクラスかSymbolクラスのリテラルを指定
+=end
