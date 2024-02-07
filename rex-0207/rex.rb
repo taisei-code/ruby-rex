@@ -76,5 +76,14 @@ String#splitはselfの文字列を分割するメソッドです。
 問題のコードでは正規表現を用いて";"または":"で文字列を分割します。
 =end
 
+# No6
+
+# hoge = *"a"
+# puts hoge.class
+
+=begin
+*"a"はArrayクラスのオブジェクトを返します。
+=end
+
 
 
