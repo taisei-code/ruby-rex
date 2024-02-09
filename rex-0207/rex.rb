@@ -459,26 +459,84 @@ Array#unshift | selfの先頭へ引数の値を破壊的に追加します(FIFO)
 
 # No41
 
+# arr = [
+#   "a".to_i(36), #10
+#   "070".to_i(0), #56
+#   nil.to_i, #0
+#   "0b0001".to_i #0
+# ]
+
+# p arr
+
+=begin
+String#to_iメソッドは文字列を整数に変換
+to_i(n)のように引数に基数を指定できます。
+引数nに基数を指定することでn進数へ変換
+
+nに0を指定した場合変換対象の接頭辞から基数を判断
+=end
+
+# No42 保留
+
 =begin
 =end
 
-# No42
-
-=begin
-=end
-
-# No43
+# No43 保留
 
 =begin
 =end
 
 # No44
 
+# str = "-1234567890-"
+# str.delete!("^2-41-") # -1234-
+# str.delete!("0^5-9-") # 1234
+# str.delete("05-9", "^1-4-") # -1234567890-
+
+# puts str # -1234-
+
 =begin
+String#deleteメソッドは、引数に指定した文字を削除
+引数の先頭の文字が^の場合は指定した文字以外の文字を削除
+-は両端に文字がある場合は範囲指定
 =end
 
-# No45
+# No46
+
+# p [1,2,3,4,5].partition(&:odd?) #[[1, 3, 5], [2, 4]]
+# p [1,2,3,4,5].partition { |value| value.even? } # 同じ結果
 
 =begin
+ネストされた配列で１つめに奇数、２つめに偶数が格納されています。
+
+&:<メソッド名>とするとSymbol#to_procが実行 = ブロックを指定して奇数を判定することと同じ
+even?とすると左に偶数
 =end
 
+
+# No48
+
+# p [[1, "data1"], [2, "data2"]].to_h #{1=>"data1", 2=>"data2"}
+
+=begin
+
+空のHashオブジェクトの生成
+→ Hash({}), {}, Hash.new
+
+Hash#to_hは2次元配列からハッシュを生成
+
+Hash#mergeは非破壊的メソッド
+Hash#clearはselfより要素を全て取り除きます。Hash#clearは破壊的メソッド
+
+=end
+
+# No49
+
+# a = [1,2,3,4]
+# p a.slice(2,1)
+
+# No50
+
+=begin
+Enumerable#map	Enumerable#collectの別名
+=end
