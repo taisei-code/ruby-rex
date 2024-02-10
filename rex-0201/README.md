@@ -8,7 +8,7 @@ Rubyはそのままだと「インスタンス変数」にアクセスできな�
 
 ### attr_reader
 ---
-attr_reader :nameと書けば、インスタンス変数@nameにアクセスできる。
+attr_reader :nameと書けば、インスタンス変数@nameにアクセスできる。  
 しかし、@nameをクラスの外部から変更できない。
 
 ### attr_writerメソッド
