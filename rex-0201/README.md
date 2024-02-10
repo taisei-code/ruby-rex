@@ -46,3 +46,8 @@ human.name = "ソボスライ"
 puts human.name 
 ```
 
+# String#concat
+破壊的メソッドのconcatは、元の変数の値が結合した文字列に変わる。  
+  
+concatで文字列を結合  
+concatで配列を結合
