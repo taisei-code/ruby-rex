@@ -46,16 +46,20 @@ human.name = "ソボスライ"
 puts human.name 
 ```
 
-# String#concat
+## String#concat
 破壊的メソッドのconcatは、元の変数の値が結合した文字列に変わる。  
   
 concatで文字列を結合  
 concatで配列を結合
 
-# Proc
+## Proc
 
 - Procとは、**ブロックを持ち運び便利なオブジェクト**にしたもの
 - Procはクラスなので、**Proc.new**でオブジェクトを作れる
 - **Proc.new**で作成されたProcオブジェクトは**call**で呼び出せる
 
-# Arrayクラスのsortメソッド
+## Arrayクラスのsortメソッド
+
+- 配列の中身を昇順で並び替えた新たな配列が戻り値として取得
+- 要素の並び替えは<=>演算子によって行われます。
+- <=>では文字列と数値は比較できません。

@@ -107,7 +107,18 @@ p p2.call
 
 =end
 
+=begin
+
 # ④ sortメソッド
 
+## 数値
+
+array = [300,100,200]
+p array.sort
+
+arr = ["c", 2, "a", 1]
+p.arr.sort
+
+=end
 
 
