@@ -51,3 +51,9 @@ puts human.name
   
 concatで文字列を結合  
 concatで配列を結合
+
+# Proc
+
+- Procとは、**ブロックを持ち運び便利なオブジェクト**にしたもの
+- Procはクラスなので、**Proc.new**でオブジェクトを作れる
+- **Proc.new**で作成されたProcオブジェクトは**call**で呼び出せる

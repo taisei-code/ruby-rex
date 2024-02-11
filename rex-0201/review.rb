@@ -49,6 +49,8 @@ puts foo.a # 読み取りのattr_readerが定義されてないから、NoMethod
 
 =end
 
+=begin 
+
 # ② concat
 
 def hoge(n)
@@ -63,12 +65,27 @@ str = ' '
 str.concat hoge(3) # 文字列オブジェクトstrの末尾にhogeメソッドのif文の結果を結合するパターン
 puts str
 
-### 文字列を結合
+## 文字列を結合
 
 s1 = "ようこそ"
 s2 = "Rubyの世界へ"
 
 s1.concat(s2) # s1の変数の中身を破壊的に変更
-
 p s1
+
+## 配列を結合
+
+array1 = [1,2,3]
+array2 = [4,5]
+
+array1.concat(array2)
+p array1
+
+=end
+
+# ③ Proc、call
+
+proc1 = Proc.new { p "proc" }
+proc1.call
+
 
