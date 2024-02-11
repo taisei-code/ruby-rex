@@ -83,9 +83,31 @@ p array1
 
 =end
 
+=begin 
+
 # ③ Proc、call
 
 proc1 = Proc.new { p "proc" }
 proc1.call
+
+def hoge(step = 1)
+  current = 0
+
+  Proc.new {
+    current += step
+  }
+end
+
+p2 = hoge(2)
+
+p2.call
+p2.call
+
+p p2.call
+
+=end
+
+# ④ sortメソッド
+
 
 
