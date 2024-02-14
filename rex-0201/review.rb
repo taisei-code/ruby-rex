@@ -121,4 +121,35 @@ p.arr.sort
 
 =end
 
+=begin 
+
+# # ⑤ splitメソッド
+
+str = "1;2;3;4"
+p str.split(";")
+
+p "Spring,Summer,Winter".split(/,/)
+p "Spring,Summer,Winter".split(/(,)/)
+
+=end
+
+=begin
+
+# ⑥ product, transpose
+
+p [1,2].product([3,4])
+
+=end
+
+=begin 
+
+# ⑦ each_slice
+
+arr = [1, 2, 3, 4, 5, 6]
+arr.each_slice(4) do |i|
+  p i
+end
+
+=end
+
 
