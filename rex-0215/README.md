@@ -35,9 +35,10 @@ Time, Date, DateTimeクラスに対して使える
 - transpose
 行と列を入れ替えた新しい配列を返す
 
+- strip 
+文字列の先頭と末尾の空白文字(\t\r\n\f\v)を取り除きます。
 
 - scan
-- strip 
 - split 
 - zip 
 - product

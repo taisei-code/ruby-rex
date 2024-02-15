@@ -1,3 +1,6 @@
+### ① メソッド
+
+
 ## to_h
 
 human = [["name", "pikawaka"]]
@@ -64,3 +67,8 @@ puts str.upcase # HELLO WORLD
 
 ary = [[1,2], [3,4], [5,6]]
 p ary.transpose # [[1, 3, 5], [2, 4, 6]]
+
+### 多重代入
+
+str = "Liberty Fish   \r\n"
+p str.strip
