@@ -54,3 +54,13 @@ array2 = [[1,2],[3,4]]
 # p array2.object_id # 70199722528440
 p array2.flatten! # [1, 2, 3, 4]
 p array2.object_id # 70118177214120
+
+## upcase
+
+str = "Hello World"
+puts str.upcase # HELLO WORLD
+
+## transpose
+
+ary = [[1,2], [3,4], [5,6]]
+p ary.transpose # [[1, 3, 5], [2, 4, 6]]

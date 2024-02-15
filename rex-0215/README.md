@@ -29,13 +29,18 @@ Time, Date, DateTimeクラスに対して使える
 - flatten!
 破壊的メソッド
 
+- upcase
+小文字を大文字にする
+
+- transpose
+行と列を入れ替えた新しい配列を返す
+
+
 - scan
 - strip 
 - split 
 - zip 
-- transpose
 - product
-- upcase
 - each
 - delete 
 - delete_if 
