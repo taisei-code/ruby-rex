@@ -1,6 +1,5 @@
 ### ① メソッド
 
-
 ## to_h
 
 human = [["name", "pikawaka"]]
@@ -68,7 +67,52 @@ puts str.upcase # HELLO WORLD
 ary = [[1,2], [3,4], [5,6]]
 p ary.transpose # [[1, 3, 5], [2, 4, 6]]
 
+## strip
+
+# str = "Liberty Fish   \r\n"
+str = " Hello " # "Hello"
+p str.strip
+
+## split
+
+str1 = "1;2:3;4"
+p str1.split(/;|:/)
+
+## each
+
+fruits = ["apple", "orange", "melon"]
+fruits.each do |a|
+  puts a
+end 
+
+(1..10).each do |a|
+  puts a
+end 
+
 ### 多重代入
 
-str = "Liberty Fish   \r\n"
-p str.strip
+# x, y, z = 1, 2
+# p x 
+# p y 
+# p z # nil 
+
+# x, y, z = 1, 2, 3, 4 # 4は無視
+# p x 
+# p y 
+# p z 
+
+# x = 1,2,3,4
+# p x # [1, 2, 3, 4] 1つの変数に対して複数の値は配列になる
+
+# (x, y), z = 1, 2, 3
+# p x
+# p y # nil 3は無視
+# p z
+
+# (x, y), z = [1, 2], 3
+# p x 
+# p y 
+# p z
+
+
+

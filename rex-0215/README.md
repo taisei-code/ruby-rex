@@ -38,25 +38,24 @@ Time, Date, DateTimeクラスに対して使える
 - strip 
 文字列の先頭と末尾の空白文字(\t\r\n\f\v)を取り除きます。
 
-- scan
 - split 
-- zip 
-- product
+selfの文字列を分割する
+
 - each
-- delete 
-- delete_if 
-- reject
-- reject_if
-- select
-- pwd
-- eql
-- equal?
-- find_all
+配列の要素分の処理を繰り返し行いたい場合に使用するメソッドです。
+配列を指定してeachメソッドを実行すると、配列のインデックス番号0から順番に繰り返し処理が実行されます。
+
+- product 
+
+- find_all, select
+各要素に対してブロックを評価した結果が、真である要素の配列を作成し返します
+
+- collect, map
+各要素に対してブロックを評価した結果を配列に格納し返します
+
 - detect
-- collect
-- strip
-- chomp
-- chop
+各要素に対してブロックを評価した結果が、真である要素の配列を作成し返します
+
 
 # 進数
 
@@ -65,20 +64,47 @@ Time, Date, DateTimeクラスに対して使える
 - 0b
 - oct
 
+# Hashクラス
+
+Hashの初期化
+- {}
+- Hash.new 
+
+
+# 多重代入
+- 変数に対して代入する値の数が少ないときは余った変数にnilが格納されます。
+- 変数に対して値の数が多い場合は余った値は無視されます。
+- 1つの変数に対して複数の値を代入する場合は配列として代入されます。
+
+
+# Dirクラスのクラスメソッド
+
+- Dir.pwd
+カレントディレクトリのフルパスを文字列で返します。
+
+# フォーマット文字列
+
+- %F   日付（%Y-%m-%d）
+- %Y   西暦4桁
+- %y   西暦の下2桁
+- %m   月を表す
+- %d   日
+- %D   日付（%m/%d/%y）
+
 # 三項演算子
 
 # &, &&, |, ||
 
-# Hashクラス
-
-# 多重代入
-
-# Dirクラス
-
-# フォーマット文字列
-
-- %F
-- %Y
-- %y
-- %m
-- %d
+- scan
+- zip 
+- delete 
+- delete_if 
+- reject
+- reject_if
+- pwd
+- eql
+- equal?
+- detect
+- strip
+- chomp
+- chop
