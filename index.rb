@@ -89,6 +89,19 @@ end
   puts a
 end 
 
+## product
+
+array3 = [1,2].product([3,4])
+p array3 # [[1, 3], [1, 4], [2, 3], [2, 4]]
+
+## chop
+
+str2 = "Hello\r\n"
+p str2.chop # "Hello"
+
+str3 = "Hello"
+p str3.chop # "Hell"
+
 ### 多重代入
 
 # x, y, z = 1, 2
