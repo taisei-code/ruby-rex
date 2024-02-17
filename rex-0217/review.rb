@@ -9,9 +9,12 @@ def hoge(step = 1)
   }
 end 
 
-p1 = hoge
-p1.call
-p p1
+p2 = hoge(2)
+
+p2.call
+p2.call
+p p2.call # 6
+
 
 # 8 
 
