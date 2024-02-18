@@ -118,3 +118,7 @@
 # hash = {"apple" => "grate", "banana" => "ole", "orange" => "juice"}
 # hash.update({"grape" => "juice"})
 # p hash
+
+# clear
+# hash = {"apple" => "grate", "banana" => "ole", "orange" => "juice"}
+# p hash.clear
