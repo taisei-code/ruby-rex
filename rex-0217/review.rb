@@ -114,3 +114,7 @@
 # hash = {"apple" => "grate", "banana" => "ole", "orange" => "juice"}
 # p hash.to_a # [["apple", "grate"], ["banana", "ole"], ["orange", "juice"]]
 
+# update
+# hash = {"apple" => "grate", "banana" => "ole", "orange" => "juice"}
+# hash.update({"grape" => "juice"})
+# p hash
