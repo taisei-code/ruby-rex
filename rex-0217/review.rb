@@ -122,3 +122,15 @@
 # clear
 # hash = {"apple" => "grate", "banana" => "ole", "orange" => "juice"}
 # p hash.clear
+
+### 34
+
+# p "Apple-Banana-Lemon".split /(-)/
+# ["Apple", "-", "Banana", "-", "Lemon"]
+
+### 41~50
+
+### 41
+# require "date"
+# p Date.today.strftime("%F")        # "2024-02-18"
+# p Date.today.strftime("%Y-%m-%d")  # "2024-02-18"

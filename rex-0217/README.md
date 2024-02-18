@@ -59,3 +59,9 @@ selfからcnt個ずつ要素を取り出しブロックに渡す
 ## Compact!
 
 selfからnilを破壊的に取り除く
+
+## Hashクラスについて
+
+Hashの初期化
+- {}
+- Hash.new
